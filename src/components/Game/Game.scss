@@ -1,0 +1,17 @@
+.host {
+  flex-grow: 1;
+
+  .cross {
+    $size: 0.2em;
+    position: absolute;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    margin-left: -($size/2);
+    margin-top: -($size/2);
+    background-color: white;
+    box-shadow: 0 0 0 1px rgba(black, 0.2);
+    left: 50%;
+    top: 50%;
+  }
+}

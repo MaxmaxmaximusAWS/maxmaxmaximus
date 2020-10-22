@@ -1,0 +1,20 @@
+@import "~normalize.css";
+
+.host {
+  height: 100%;
+  background-color: #444;
+  display: flex;
+  font-family: Arial, serif;
+}
+
+
+:global {
+  html, body {
+    height: 100%;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+}
