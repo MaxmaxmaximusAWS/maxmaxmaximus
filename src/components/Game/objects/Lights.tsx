@@ -30,6 +30,7 @@ const Lights: FC = () => {
       />
 
       <hemisphereLight intensity={0.3} />
+
       <pointLight position={[-30, 10, -30]} intensity={0.5} />
     </>
   )

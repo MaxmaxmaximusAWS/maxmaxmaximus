@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useRef } from 'react'
 import { Canvas } from 'react-three-fiber'
 import { Physics } from 'use-cannon'
 import Lights from './Lights'
@@ -34,4 +34,4 @@ const GameWorld: FC = () => {
 
 export default GameWorld
 
-const colors = ['#99b898', '#fecea8', '#ff847c', '#e84a5f', '#2a363b']
+// const colors = ['#99b898', '#fecea8', '#ff847c', '#e84a5f', '#2a363b']

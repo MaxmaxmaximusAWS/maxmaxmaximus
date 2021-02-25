@@ -26,7 +26,7 @@ const Pins: FC<PinsProps> = ({ resetPins = false }) => {
 
   const onFellChange = useCallback<IndexedPinFellChangeHandler>(
     (isFell, index) => {
-      console.log('onFellChange', isFell, index)
+      // console.log('onFellChange', isFell, index)
     },
     []
   )

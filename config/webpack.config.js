@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin')
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { HotModuleReplacementPlugin } = require('webpack')
+const { HotModuleReplacementPlugin, DefinePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -39,12 +39,15 @@ module.exports = (mode) => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, `${src}/lib/index.html`),
       }),
-      isDevelopment && new HotModuleReplacementPlugin(),
-      isDevelopment && new ReactRefreshWebpackPlugin(),
       new ExtractCssChunks({
         filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
         chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css',
       }),
+      new DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(mode),
+      }),
+      isDevelopment && new HotModuleReplacementPlugin(),
+      isDevelopment && new ReactRefreshWebpackPlugin(),
     ].filter(Boolean),
 
     module: {
@@ -157,6 +160,7 @@ module.exports = (mode) => {
       stats: 'errors-only',
       port: 3000,
       hot: isDevelopment,
+      disableHostCheck: true,
     },
   }
 }

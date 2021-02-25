@@ -12,7 +12,7 @@ const Player: FC<PlayerProps> = ({ ball }) => {
   const isRunning = useKeyDown('ShiftLeft')
 
   const playerControls = usePointerLockControls({
-    speed: isRunning ? 60 : 30,
+    speed: isRunning ? 200 : 30,
     height: 1,
     x: 0,
     z: 0,

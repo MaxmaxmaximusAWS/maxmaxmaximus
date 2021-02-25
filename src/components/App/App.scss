@@ -1,13 +1,5 @@
 @import "~normalize.css";
 
-.host {
-  height: 100%;
-  background-color: #444;
-  display: flex;
-  font-family: Arial, serif;
-}
-
-
 :global {
   html, body {
     height: 100%;
@@ -17,4 +9,15 @@
     height: 100%;
     overflow: hidden;
   }
+}
+
+.host {
+  height: 100%;
+  width: 100%;
+  background-color: #444;
+  font-family: Arial, serif;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  flex-direction: column;
 }
